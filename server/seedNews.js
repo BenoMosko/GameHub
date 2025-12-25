@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 const News = require('./models/newsModel');
 
-// DB Config
-const db = "mongodb+srv://Admin:Dallas41@sarajevo.nyyt3.mongodb.net/Sarajevo?retryWrites=true&w=majority";
+const config = require('config');
+
+// DB Config - Load from config file (secure)
+const db = config.get('mongoURI');
 
 // Connect to MongoDB
 mongoose
-    .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(db)
     .then(() => console.log('MongoDB Connected for Seeding'))
     .catch(err => console.log(err));
 
