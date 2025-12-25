@@ -4,6 +4,8 @@ import axios from 'axios';
 import '../../css/LoginPage/LoginPage.css';
 import '../../css/global.css';
 
+const API_URL = process.env.REACT_APP_SOCKET_URL || 'http://localhost:8200';
+
 function LoginPage() {
     const [data, setData] = useState({ email: '', password: '' });
     const [error, setError] = useState(null);
@@ -36,7 +38,7 @@ function LoginPage() {
         e.preventDefault();
         setError(null);
         try {
-            const response = await axios.post('http://localhost:8200/api/users/login', data, {
+            const response = await axios.post(`${API_URL}/api/users/login`, data, {
                 headers: { 'Content-Type': 'application/json', 'Accept': '*/*' }
             });
             if (response.status === 200) {
@@ -63,7 +65,7 @@ function LoginPage() {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:8200/api/users/register', registerData, {
+            const response = await axios.post(`${API_URL}/api/users/register`, registerData, {
                 headers: { 'Content-Type': 'application/json', 'Accept': '*/*' }
             });
             if (response.status === 201) {
@@ -86,7 +88,7 @@ function LoginPage() {
         }
 
         try {
-            const response = await axios.post('http://localhost:8200/api/users/forgot-password',
+            const response = await axios.post(`${API_URL}/api/users/forgot-password`,
                 { email: emailToReset },
                 {
                     headers: { 'Content-Type': 'application/json', 'Accept': '*/*' }
