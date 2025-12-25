@@ -1,0 +1,255 @@
+/* Admin Dashboard Base */
+.admin-dashboard {
+    padding: 2rem;
+    min-height: calc(100vh - 70px);
+    background-color: #0f172a;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../../imgs/OPWM.png');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #e2e8f0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ef4444;
+    padding-bottom: 1rem;
+}
+
+.admin-title {
+    font-family: 'Black Ops One', cursive;
+    color: #ef4444;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    margin: 0;
+}
+
+.admin-subtitle {
+    color: #fca5a5;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+}
+
+/* Tabs Navigation */
+.admin-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #7f1d1d;
+    color: #9ca3af;
+    padding: 1rem 2rem;
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    text-transform: uppercase;
+}
+
+.tab-btn:hover {
+    color: #ef4444;
+    border-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.tab-btn.active {
+    background-color: #b91c1c;
+    color: white;
+    border-color: #ef4444;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
+/* Base Panel Styles */
+.admin-panel {
+    background-color: rgba(10, 10, 10, 0.82);
+    border: 1px solid #7f1d1d;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.admin-panel::before {
+    content: "SECURE TERMINAL // ADMIN CLEARANCE ONLY";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #0f172a;
+    padding: 0 10px;
+    color: #ef4444;
+    font-size: 0.8rem;
+    border: 1px solid #7f1d1d;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.panel-title {
+    font-family: 'Black Ops One', cursive;
+    color: #ef4444;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Table Styles */
+.data-table-container {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.data-table th,
+.data-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #450a0a;
+}
+
+.data-table th {
+    background-color: rgba(69, 10, 10, 0.5);
+    color: #fca5a5;
+    font-family: 'Black Ops One', cursive;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.data-table td {
+    color: #cbd5e1;
+}
+
+.data-table tr:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Admin Actions Buttons */
+.btn-action {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ef4444;
+    background: transparent;
+    color: #ef4444;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn-delete {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.btn-delete:hover {
+    background-color: #7f1d1d;
+    color: white;
+}
+
+/* Forms (New/Edit) */
+.admin-form-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border: 1px dashed #7f1d1d;
+    margin-top: 2rem;
+}
+
+.admin-input-group {
+    margin-bottom: 1rem;
+}
+
+.admin-input-group label {
+    display: block;
+    color: #fca5a5;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.admin-input,
+.admin-select,
+.admin-textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #450a0a;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.admin-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.admin-input:focus,
+.admin-select:focus,
+.admin-textarea:focus {
+    outline: none;
+    border-color: #ef4444;
+}
+
+/* Status Messages */
+.status-success {
+    color: #4ade80;
+    margin-bottom: 1rem;
+    border: 1px solid #22c55e;
+    padding: 1rem;
+    background-color: rgba(22, 101, 52, 0.2);
+}
+
+.status-error {
+    color: #f87171;
+    margin-bottom: 1rem;
+    border: 1px solid #ef4444;
+    padding: 1rem;
+    background-color: rgba(127, 29, 29, 0.2);
+}
+
+/* Dashboard Summary Cards */
+.admin-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background-color: rgba(20, 20, 20, 0.8);
+    border: 1px solid #ef4444;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.summary-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ef4444;
+    font-family: 'Black Ops One', cursive;
+}
+
+.summary-label {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}

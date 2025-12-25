@@ -1,0 +1,4 @@
+{
+    "mongoURI" : "mongodb+srv://Admin:Dallas41@sarajevo.nyyt3.mongodb.net/Sarajevo?retryWrites=true&w=majority",
+    "jwtSecret": "G@7g@m3l"
+}

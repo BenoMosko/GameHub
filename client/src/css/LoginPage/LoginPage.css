@@ -1,0 +1,309 @@
+/* Page Layout */
+.login-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f172a;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../imgs/OPWM.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* CRT Scanline Effect Overlay */
+.login-page::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 1;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+.login-container {
+    background-color: rgba(10, 10, 10, 0.85);
+    padding: 2.5rem;
+    border: 2px solid #b91c1c;
+    /* Red border */
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(185, 28, 28, 0.5), inset 0 0 30px rgba(0, 0, 0, 0.8);
+    width: 100%;
+    max-width: 450px;
+    z-index: 2;
+    position: relative;
+    clip-path: polygon(0 0,
+            100% 0,
+            100% calc(100% - 20px),
+            calc(100% - 20px) 100%,
+            0 100%);
+    /* Tech corner cut */
+}
+
+/* Decorative corner markers */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 20px;
+    height: 20px;
+    border-top: 4px solid #ef4444;
+    border-left: 4px solid #ef4444;
+}
+
+.login-container::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    border-bottom: 4px solid #ef4444;
+    border-right: 4px solid #ef4444;
+}
+
+/* Forms */
+.login-form,
+.register-form,
+.reset-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+/* Form Header */
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ef4444;
+    /* Red text */
+    font-family: 'Black Ops One', cursive;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    border-bottom: 1px solid #7f1d1d;
+    padding-bottom: 1rem;
+}
+
+.form-description {
+    text-align: center;
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Form Inputs */
+.form-input {
+    padding: 1rem;
+    border: 1px solid #450a0a;
+    border-radius: 0;
+    font-size: 1rem;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #f87171;
+    /* Light red text */
+    letter-spacing: 1px;
+}
+
+.form-input::placeholder {
+    color: #7f1d1d;
+    text-transform: uppercase;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #ef4444;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+    background-color: rgba(69, 10, 10, 0.3);
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0;
+    font-size: 1rem;
+    font-family: 'Black Ops One', cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.btn-primary {
+    background-color: #b91c1c;
+    color: white;
+    width: 100%;
+    border: 1px solid #ef4444;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary:hover {
+    background-color: #ef4444;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ef4444;
+    border: 1px solid #7f1d1d;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(127, 29, 29, 0.2);
+    border-color: #ef4444;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+.btn-secondary:active {
+    transform: scale(0.98);
+}
+
+.btn-link {
+    background-color: transparent;
+    color: #9ca3af;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.btn-link:hover {
+    color: #ef4444;
+    text-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+}
+
+/* Form Footer */
+.form-footer {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid #450a0a;
+    padding-top: 1rem;
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem;
+    border-radius: 0;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 4px solid;
+}
+
+.alert-error {
+    background-color: rgba(69, 10, 10, 0.9);
+    color: #fca5a5;
+    border-color: #ef4444;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
+}
+
+.alert-success {
+    background-color: rgba(6, 78, 59, 0.9);
+    color: #6ee7b7;
+    border-color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.alert-message {
+    flex: 1;
+}
+
+/* Additional Options */
+.additional-options {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.options-menu {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #450a0a;
+    animation: slideDown 0.3s ease;
+}
+
+.options-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 1.5rem;
+        max-width: 95%;
+        border-width: 1px;
+    }
+
+    .form-header {
+        font-size: 2rem;
+    }
+}

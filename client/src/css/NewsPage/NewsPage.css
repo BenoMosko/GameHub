@@ -1,0 +1,51 @@
+.news-page {
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: #0f172a;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../../imgs/OPWM.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.news-page-title {
+    color: #ef4444;
+    font-family: 'Black Ops One', cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    border-bottom: 2px solid #7f1d1d;
+    padding-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.news-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.loading-text,
+.no-news {
+    color: #ef4444;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

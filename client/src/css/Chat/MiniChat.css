@@ -1,0 +1,220 @@
+.minichat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: #0d1117;
+    color: #e5e7eb;
+    font-family: 'Roboto Mono', monospace;
+    overflow: hidden;
+}
+
+.minichat-header {
+    padding: 0.5rem;
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+.minichat-tabs {
+    display: flex;
+    gap: 4px;
+}
+
+.minichat-tabs button {
+    background: transparent;
+    border: 1px solid #30363d;
+    color: #8b949e;
+    cursor: pointer;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.minichat-tabs button.active {
+    background: #238636;
+    color: #ffffff;
+    border-color: #238636;
+}
+
+.status-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 5px currentColor;
+}
+
+.minichat-feed {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mini-message {
+    display: flex;
+    gap: 8px;
+    font-size: 0.8rem;
+    align-items: flex-start;
+}
+
+.mini-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #000;
+    border: 1px solid #30363d;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #8b949e;
+}
+
+.mini-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mini-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.mini-author {
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-bottom: 2px;
+    width: fit-content;
+    display: inline-block;
+}
+
+.mini-text {
+    color: #c9d1d9;
+    word-wrap: break-word;
+    line-height: 1.3;
+}
+
+.minichat-input-area {
+    padding: 0.5rem;
+    background: #161b22;
+    border-top: 1px solid #30363d;
+}
+
+.minichat-input {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    color: #ef4444;
+    padding: 6px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    outline: none;
+}
+
+.minichat-input:focus {
+    border-color: #ef4444;
+}
+
+/* LIST VIEWS */
+.minichat-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem;
+}
+
+.list-header {
+    font-size: 0.7rem;
+    color: #8b949e;
+    margin-bottom: 0.5rem;
+    font-family: 'Orbitron', sans-serif;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 2px;
+}
+
+.list-item {
+    padding: 6px;
+    margin-bottom: 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #c9d1d9;
+    transition: background 0.2s;
+}
+
+.list-item:hover {
+    background: #21262d;
+}
+
+.list-item.active {
+    background: rgba(35, 134, 54, 0.2);
+    color: #4ade80;
+    border-left: 2px solid #4ade80;
+}
+
+.list-item.user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mini-avatar.small {
+    width: 20px;
+    height: 20px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 3px;
+}
+
+/* HOVER CARD */
+.hover-profile-card {
+    position: fixed;
+    /* Fixed to viewport as window is small */
+    background: rgba(13, 17, 23, 0.95);
+    border: 1px solid #4ade80;
+    padding: 0;
+    width: 200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    pointer-events: none;
+    /* Let clicks pass through if it gets in way */
+    border-radius: 4px;
+    animation: fadeIn 0.1s ease-out;
+}
+
+.hover-header {
+    background: #064e3b;
+    color: #4ade80;
+    padding: 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-bottom: 1px solid #065f46;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.hover-body {
+    padding: 8px;
+    font-size: 0.7rem;
+    color: #d1d5db;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
